@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mearns Detailers | Professional Car Detailing</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+  <meta name="description"
+    content="Professional mobile car detailing in Glasgow. Interior, exterior and ceramic coating services. Book your detail today.">
+
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1149798967099825');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1149798967099825&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: white;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ── Header ── */
+    header {
+      background: #000;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 100;
+    }
+
+    .logo-wrapper {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    header img {
+      height: 69px;
+    }
+
+    /* ── Hamburger ── */
+    .hamburger {
+      width: 30px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 1002;
+      position: relative;
+      margin-left: auto;
+    }
+
+    .hamburger span {
+      width: 100%;
+      height: 3px;
+      background: #38b6ff;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    /* ── Menu Overlay ── */
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ── Slide Menu ── */
+    .slide-menu {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      width: 50%;
+      height: 100vh;
+      background: #0f0f0f;
+      border-left: 1px solid #1f1f1f;
+      box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+      transition: right 0.3s ease;
+      z-index: 1001;
+      overflow-y: auto;
+    }
+
+    .slide-menu.active {
+      right: 0;
+    }
+
+    .menu-content {
+      padding: 100px 40px 40px;
+    }
+
+    .menu-content nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .menu-content nav ul li {
+      margin-bottom: 30px;
+    }
+
+    .menu-content nav ul li a {
+      color: #cfcfcf;
+      font-size: 24px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      position: relative;
+    }
+
+    .menu-content nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: #38b6ff;
+      transition: width 0.3s ease;
+    }
+
+    .menu-content nav ul li a:hover {
+      color: #38b6ff;
+      transform: translateX(10px);
+    }
+
+    .menu-content nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .menu-divider {
+      height: 1px;
+      background: #1f1f1f;
+      margin: 40px 0;
+    }
+
+    .menu-cta {
+      margin-top: 40px;
+    }
+
+    .menu-cta .btn {
+      width: 100%;
+      text-align: center;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-block;
+      background: #38b6ff;
+      color: #000;
+      padding: 16px 34px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 16px;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 45px 20px 20px;
+      background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      max-width: 900px;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      color: #cfcfcf;
+      max-width: 720px;
+      margin: 0 auto 35px;
+      font-size: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-headline-bg h1 {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.85);
+    }
+
+    .hero-offer-title {
+      font-size: 56px;
+      font-weight: 900;
+      color: #00d4ff;
+      letter-spacing: -1px;
+      position: relative;
+      display: inline-block;
+      padding: 8px 0;
+      text-shadow:
+        0 0 30px rgba(0, 212, 255, 0.8),
+        0 0 60px rgba(0, 212, 255, 0.5),
+        0 4px 20px rgba(0, 0, 0, 0.9),
+        2px 2px 4px rgba(0, 0, 0, 1);
+      filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.7));
+    }
+
+    .hero-offer-title::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 4px;
+      background: #00d4ff;
+      box-shadow:
+        0 0 20px rgba(0, 212, 255, 0.9),
+        0 0 40px rgba(0, 212, 255, 0.6);
+    }
+
+    .hero-offer-sub {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ff6b6b;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: pulse 2s ease-in-out infinite;
+      text-shadow: 0 0 10px rgba(255, 107, 107, 0.4);
+    }
+
+    .hero-main-title {
+      font-size: 22px;
+      font-weight: 500;
+      color: #cfcfcf;
+      margin-top: 10px;
+    }
+
+    .hero-phone,
+    .hero-whatsapp {
+      display: block;
+      width: 260px;
+      margin: 14px auto 22px;
+      padding: 14px 0;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 50px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .hero-phone {
+      color: #38b6ff;
+      background: rgba(56, 182, 255, 0.14);
+      border: 1px solid rgba(56, 182, 255, 0.35);
+    }
+
+    .hero-whatsapp {
+      color: #25D366;
+      background: rgba(37, 211, 102, 0.14);
+      border: 1px solid rgba(37, 211, 102, 0.35);
+    }
+
+    .hero-phone:hover {
+      background: rgba(56, 182, 255, 0.22);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(56, 182, 255, 0.35);
+    }
+
+    .hero-whatsapp:hover {
+      background: rgba(37, 211, 102, 0.22);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+    }
+
+    .social-proof {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #bdbdbd;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stars {
+      color: #ffc83d;
+      margin-top: 8px;
+      font-size: 16px;
+    }
+
+    /* ── Before & After ── */
+    .before-after {
+      padding-top: 10px;
+      padding-bottom: 30px;
+      background: #0b0b0b;
+      text-align: center;
+    }
+
+    .ba-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 1100px;
+      margin: 40px auto 0;
+    }
+
+    .ba-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .ba-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .ba-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ba-label {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 20px;
+    }
+
+    .ba-label.before {
+      background: #ff4d4d;
+      color: white;
+    }
+
+    .ba-label.after {
+      background: #38b6ff;
+      color: black;
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .section-dark {
+      background: #000;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .subtext {
+      max-width: 720px;
+      margin: 0 auto 50px;
+      color: #cfcfcf;
+      font-size: 17px;
+    }
+
+    /* ── Features ── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .feature {
+      background: #111;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #1f1f1f;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      color: #38b6ff;
+      font-size: 20px;
+    }
+
+    .feature p {
+      color: #cfcfcf;
+      font-size: 15px;
+    }
+
+    /* ── Services ── */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    .service-link {
+      display: flex;
+    }
+
+    .service-card {
+      background: #111;
+      border-radius: 12px;
+      border: 2px solid #1f1f1f;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #38b6ff;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-card:nth-child(1) img {
+      object-position: center 65%;
+    }
+
+    .service-card:nth-child(2) img {
+      object-position: center 58%;
+    }
+
+    .service-card:nth-child(3) img {
+      object-position: center 58%;
+    }
+
+    .service-card:nth-child(4) img {
+      object-position: center 63%;
+    }
+
+    .service-card:nth-child(5) img {
+      object-position: center 58%;
+    }
+
+    .service-card:nth-child(6) img {
+      object-position: center 59%;
+    }
+
+    .service-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .service-card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .service-card .price {
+      font-size: 22px;
+      font-weight: 700;
+      color: #38b6ff;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #b5b5b5;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .services-cta {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .sale-badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background: #38b6ff;
+      color: #000;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.2;
+      box-shadow: 0 4px 15px rgba(56, 182, 255, 0.4);
+      z-index: 5;
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      background: #cc2424;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 8px;
+      font-weight: 700;
+      line-height: 1.1;
+      z-index: 6;
+    }
+
+    /* ── Testimonials ── */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .testimonial {
+      background: #0f0f0f;
+      padding: 28px;
+      border-radius: 12px;
+      border: 1px solid #1f1f1f;
+    }
+
+    .testimonial p {
+      font-size: 15px;
+      color: #e1e1e1;
+      margin-bottom: 14px;
+    }
+
+    .testimonial span {
+      font-size: 14px;
+      color: #a9a9a9;
+    }
+
+    /* ── Gallery ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      aspect-ratio: 1;
+      display: block;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(56, 182, 255, 0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-overlay i {
+      font-size: 48px;
+      color: #000;
+    }
+
+    .gallery-overlay span {
+      font-size: 16px;
+      font-weight: 600;
+      color: #000;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-cta {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .gallery-cta .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .gallery-cta .btn i {
+      font-size: 20px;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      background: linear-gradient(180deg, #000, #0b0b0b);
+      padding: 90px 20px;
+      text-align: center;
+    }
+
+    /* ── Contact ── */
+    .contact {
+      background: #000;
+      padding: 80px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #b5b5b5;
+      font-size: 17px;
+    }
+
+    .contact-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .contact-info {
+      background: #111;
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid #1f1f1f;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-info h3 {
+      color: #38b6ff;
+      font-size: 24px;
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+
+    .contact-info h3:first-child {
+      margin-top: 0;
+    }
+
+    .contact-details p {
+      color: #cfcfcf;
+      font-size: 16px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-details i {
+      color: #38b6ff;
+      width: 20px;
+      font-size: 18px;
+    }
+
+    .contact-details a {
+      color: #cfcfcf;
+      transition: color 0.2s ease;
+    }
+
+    .contact-details a:hover {
+      color: #38b6ff;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      width: 50px;
+      height: 50px;
+      background: #1f1f1f;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #38b6ff;
+      font-size: 22px;
+      transition: all 0.2s ease;
+    }
+
+    .social-links a:hover {
+      background: #38b6ff;
+      color: #000;
+      transform: translateY(-3px);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #000;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-ambient {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 200px;
+      background: radial-gradient(ellipse at top, rgba(56, 182, 255, 0.1), transparent);
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+
+    .footer-column h3 {
+      color: #38b6ff;
+      font-size: 18px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 12px;
+    }
+
+    .footer-column ul li a {
+      color: #b5b5b5;
+      font-size: 15px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-column ul li a:hover {
+      color: #38b6ff;
+    }
+
+    .footer-column ul li:not(:has(a)) {
+      color: #b5b5b5;
+      font-size: 15px;
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      border-top: 1px solid #1f1f1f;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* ── Animations ── */
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.85;
+        transform: scale(1.08);
+      }
+    }
+
+    @keyframes phoneRing {
+
+      0%,
+      100% {
+        transform: rotate(0deg);
+      }
+
+      10%,
+      30% {
+        transform: rotate(-15deg);
+      }
+
+      20%,
+      40% {
+        transform: rotate(15deg);
+      }
+
+      50% {
+        transform: rotate(0deg);
+      }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      header {
+        padding: 20px;
+      }
+
+      .slide-menu {
+        width: 80%;
+        right: -80%;
+      }
+
+      .menu-content {
+        padding: 80px 30px 30px;
+      }
+
+      .menu-content nav ul li a {
+        font-size: 20px;
+      }
+
+      .hero {
+        padding-top: 0;
+      }
+
+      .hero-headline-bg {
+        position: relative;
+        padding: 56px 16px 48px;
+        margin: 0 -20px 16px;
+      }
+
+      .hero-headline-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("image1.webp") center / cover no-repeat;
+        opacity: 0.25;
+        z-index: 1;
+      }
+
+      .hero-headline-bg h1 {
+        position: relative;
+        z-index: 2;
+        font-size: 34px;
+        margin: 0;
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.85);
+      }
+
+      .hero-headline-bg a {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-offer-title {
+        font-size: 40px;
+      }
+
+      .hero-main-title {
+        font-size: 20px;
+      }
+
+      .ba-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ba-item img {
+        height: 200px;
+      }
+
+      .services {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 12px;
+      }
+
+      .service-card img {
+        height: 140px;
+      }
+
+      .service-content {
+        padding: 15px;
+      }
+
+      .service-card h3 {
+        font-size: 14px;
+      }
+
+      .service-card .price {
+        font-size: 18px;
+      }
+
+      .service-card p {
+        font-size: 12px;
+      }
+
+      .contact-info {
+        padding: 30px 25px;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        text-align: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slide-menu {
+        width: 85%;
+        right: -85%;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+    }
+
+    .review-carousel {
+      max-width: 700px;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .review-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .review-slide {
+      min-width: 100%;
+      background: #0f0f0f;
+      padding: 36px 40px;
+      border-radius: 12px;
+      border: 1px solid #1f1f1f;
+      text-align: center;
+    }
+
+    .review-slide p {
+      font-size: 16px;
+      color: #e1e1e1;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .review-slide span {
+      font-size: 14px;
+      color: #a9a9a9;
+    }
+
+    .review-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .review-dots .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #333;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .review-dots .dot.active {
+      background: #38b6ff;
+      transform: scale(1.3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-wrapper">
+      <img src="logo.png" alt="Mearns Detailers Logo">
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Menu Overlay -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Slide-out Menu -->
+  <div class="slide-menu" id="slideMenu">
+    <div class="menu-content">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="blogs.menu.html">Blog</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Our Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="menu-divider"></div>
+
+      <div class="menu-cta">
+        <a href="getquote.html" class="btn">Get Your Detail Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-headline-bg">
+      <h1>
+        <span class="hero-offer-title">UPTO 50% OFF</span>
+        <span class="hero-offer-title">This Week Only</span>
+        <span class="hero-offer-sub">3 Slots Remaining</span>
+        <span class="hero-main-title">
+          Professional Mobile Car Detailing in Glasgow & Surrounding Areas
+        </span>
+      </h1>
+      <a href="tel:+447578007154" class="hero-phone">
+        <i class="fas fa-phone"></i> 07578 007154
+      </a>
+      <a href="https://wa.me/447578007154" class="hero-whatsapp">
+        <i class="fab fa-whatsapp"></i> Message on WhatsApp
+      </a>
+    </div>
+
+    <p class="hero-description">
+      High End Interior, Exterior, Machine Polishing & Ceramic Coating services. Professional Mobile
+      Service Across Glasgow.
+    </p>
+
+    <a href="getquote.html" class="btn">Get Your Detail Now</a>
+
+    <div class="social-proof">
+      1000+ Vehicles Detailed
+      <div class="stars">★★★★★ 4.9 average rating</div>
+    </div>
+  </section>
+
+  <!-- Before & After Section -->
+  <section class="before-after">
+    <h2>See The Transformation</h2>
+    <p class="subtext">
+      Real results from real customers across Glasgow.
+    </p>
+
+    <div class="ba-grid">
+
+      <!-- Card 1 -->
+      <div class="ba-card">
+        <div class="ba-images">
+
+          <div class="ba-item">
+            <img src="before1.png" alt="Car interior before detailing in Glasgow" loading="lazy" decoding="async"
+              width="800" height="560">
+            <span class="ba-label before">Before</span>
+          </div>
+
+          <div class="ba-item">
+            <img src="after1.jpg" alt="Car interior after detailing in Glasgow" loading="lazy" decoding="async"
+              width="800" height="560">
+            <span class="ba-label after">After</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="ba-card">
+        <div class="ba-images">
+
+          <div class="ba-item">
+            <img src="before2.png" alt="Car exterior before detailing in Glasgow" loading="lazy" decoding="async"
+              width="800" height="560">
+            <span class="ba-label before">Before</span>
+          </div>
+
+          <div class="ba-item">
+            <img src="after2.png" alt="Car exterior after detailing in Glasgow" loading="lazy" decoding="async"
+              width="800" height="560">
+            <span class="ba-label after">After</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="ba-cta">
+        <a href="getquote.html" class="btn">Book Today</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Services & Pricing -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <p class="subtext">
+      Professional detailing packages tailored to your vehicle's needs. All prices vary based on vehicle size and
+      condition.
+    </p>
+
+    <div class="services">
+
+      <!-- Exterior Detail -->
+      <a href="exterior.html" class="service-link">
+        <div class="service-card">
+          <div class="sale-badge">WAS £50</div>
+          <img src="exterior.jpg" alt="Exterior Detail">
+          <div class="service-content">
+            <h3>Exterior Detail</h3>
+            <div class="price">From £35</div>
+            <p>
+              3 Stage Safe Wash, Wheels/Tires Cleaned, Chemical Decon, 4 Month Ceramic Sealant, Towel Dry, Tire Shine.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Interior Detail -->
+      <a href="interior.html" class="service-link">
+        <div class="service-card">
+          <div class="sale-badge">WAS £100</div>
+          <img src="interior.jpg" alt="Interior Detail">
+          <div class="service-content">
+            <h3>Interior Detail</h3>
+            <div class="price">From £65</div>
+            <p>
+              Full Interior Vacuum, Dashboard, Leather & Plastics Steam Cleaned, Mats & Carpets Shampooed.
+            </p>
+          </div>
+        </div>
+      </a>
+      <!-- Mini Valet -->
+      <a href="minivalet.html" class="service-link">
+        <div class="service-card">
+          <div class="sale-badge">WAS £85</div>
+          <img src="minivalet.jpg" alt="Mini Valet">
+          <div class="service-content">
+            <h3>Mini Valet</h3>
+            <div class="price">From £70</div>
+            <p>
+              Quick Refresh. Exterior Wash, Interior Vacuum & Wipe Down.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Full Detail -->
+      <a href="fulldetail.html" class="service-link">
+        <div class="service-card">
+          <div class="popular-badge">Most Popular</div>
+          <div class="sale-badge">WAS £200</div>
+          <img src="fulldetail2.jpg" alt="Full Detail">
+          <div class="service-content">
+            <h3>Full Detail</h3>
+            <div class="price">From £100</div>
+            <p>
+              Complete Exterior & Interior Deep Clean For a Like New Appearance.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Machine Polishing -->
+      <a href="machine.html" class="service-link">
+        <div class="service-card">
+          <div class="sale-badge">WAS £230</div>
+          <img src="machine.webp" alt="Machine Polishing">
+          <div class="service-content">
+            <h3>Machine Polishing</h3>
+            <div class="price">From £140</div>
+            <p>
+              Paint Correction To Remove Swirls, Scratches & Oxidation For a Mirror Like Shine.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Ceramic Coating -->
+      <a href="ceramic.html" class="service-link">
+        <div class="service-card">
+          <div class="sale-badge">WAS £450</div>
+          <img src="ceramic.png" alt="Ceramic Coating">
+          <div class="service-content">
+            <h3>Ceramic Coating</h3>
+            <div class="price">From £350</div>
+            <p>
+              Long Lasting Protection With Hydrophobic Properties & Enhanced Gloss.
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Engine Bay -->
+      <a href="enginebay.html" class="service-link">
+        <div class="service-card">
+          <img src="enginebay.webp" alt="Engine Bay Detail">
+          <div class="service-content">
+            <h3>Engine Bay Detail</h3>
+            <div class="price">From £25</div>
+            <p>Full Engine Bay Cleaned, Degreased & Dressed.</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Maintenance Detail -->
+      <a href="maintenance.html" class="service-link">
+        <div class="service-card">
+          <img src="maintenance.webp" alt="Maintenance Detail">
+          <div class="service-content">
+            <h3>Maintenance Detail</h3>
+            <div class="price">From £60</div>
+            <p>Regular Upkeep To Keep Your Car Looking Its Best.</p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="services-cta">
+      <a href="getquote.html" class="btn">Book My Detail</a>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section-dark">
+    <h2>What Our Customers Say</h2>
+    <p class="subtext">Real results that keep customers coming back.</p>
+
+    <div class="review-carousel">
+      <div class="review-track" id="reviewTrack">
+
+        <div class="review-slide">
+          <p>"My car looked better than the day I bought it. Such high attention to detail, even parts I didn't know
+            needed a clean were done. Would definitely get these boys back for their maintenance package."</p>
+          <span>— James R, BMW M2</span>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="review-slide">
+          <p>"Ceramic coating was worth every penny. Would definitely recommend."</p>
+          <span>— Zeeshan, McLaren 720s</span>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="review-slide">
+          <p>"I booked in for an interior deep clean and was amazed by how all the stains were taken out. Got these boys
+            over multiple times and they've always done a fab job."</p>
+          <span>— Mark T, VW Golf R</span>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="review-slide">
+          <p>"Have been using Mearns Detailers for a while now. Initially signed up for the Full Detail and was so
+            impressed with the work that was done I am now on a regular service. Have always received great and timely
+            communication — highly recommend."</p>
+          <span>— Michelle W</span>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="review-slide">
+          <p>"Got my Honda CBR500R and Audi S5 detailed and honestly I'm blown away. The bike and car both look spotless
+            and better than new. You can tell they take real pride in their work."</p>
+          <span>— Talha A, Audi S5</span>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="review-slide">
+          <p>"Brilliant job by Mearns Detailers! My car has never looked this good. Super shiny, spotless inside and
+            out,
+            and such a friendly team. Highly recommend!"</p>
+          <span>— Usman A</span>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="review-slide">
+          <p>"Amazing service — washed 6 cars in the showroom and every single one came out spotless. Big thanks for the
+            professionalism and attention to detail. Top quality work every time."</p>
+          <span>— Yahya A, Car Showroom</span>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="review-slide">
+          <p>"Got a stage 1 machine polish and interior clean for a great price and the boys got the car looking brand
+            new. Will definitely be using Mearns again."</p>
+          <span>— Kieran L</span>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="review-slide">
+          <p>"Really great service — car cleaned and prepped to a great standard, easy communication, and delivered
+            exactly what was asked and promised."</p>
+          <span>— Gavin L</span>
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="review-slide">
+          <p>"Ibrahim and Hamzah are a great pair of lads — made my car look like it came fresh from the lot. Will
+            definitely come again."</p>
+          <span>— Kane</span>
+          <div class="stars">★★★★★</div>
+        </div>
+
+      </div>
+
+      <div class="review-dots" id="reviewDots"></div>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="section-dark" id="about">
+    <h2>Why Choose Mearns Detailers?</h2>
+    <p class="subtext">
+      We don't do rushed washes or cheap shortcuts. Every detail is carried out properly,
+      using professional tools, products, and proven techniques.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Mobile Convenience</h3>
+        <p>We come to your home or workplace. No waiting, no hassle.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Paint Correction & Protection</h3>
+        <p>Swirl removal, gloss enhancement and ceramic coatings that actually last.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Interior Deep Cleans</h3>
+        <p>Seats, carpets, leather and trim fully Steam Cleaned & Sanitised.
+      </div>
+  </section>
+
+  <!-- Our Work Gallery -->
+  <section id="gallery">
+    <h2>Our Work</h2>
+    <p class="subtext">
+      See the transformations we've delivered. Tap any image to view more on Instagram.
+    </p>
+
+    <div class="gallery-grid">
+      <a href="https://instagram.com/mearns.detailers" target="_blank" rel="noopener noreferrer" class="gallery-item">
+        <img src="image2.webp" alt="Car detailing work 1">
+        <div class="gallery-overlay">
+          <i class="fab fa-instagram"></i>
+          <span>View on Instagram</span>
+        </div>
+      </a>
+
+      <a href="https://instagram.com/mearns.detailers" target="_blank" rel="noopener noreferrer" class="gallery-item">
+        <img src="image3.webp" alt="Car detailing work 2">
+        <div class="gallery-overlay">
+          <i class="fab fa-instagram"></i>
+          <span>View on Instagram</span>
+        </div>
+      </a>
+
+      <a href="https://instagram.com/mearns.detailers" target="_blank" rel="noopener noreferrer" class="gallery-item">
+        <img src="image4.webp" alt="Car detailing work 3">
+        <div class="gallery-overlay">
+          <i class="fab fa-instagram"></i>
+          <span>View on Instagram</span>
+        </div>
+      </a>
+
+      <a href="https://instagram.com/mearns.detailers" target="_blank" rel="noopener noreferrer" class="gallery-item">
+        <img src="image5.jpg" alt="Car detailing work 4">
+        <div class="gallery-overlay">
+          <i class="fab fa-instagram"></i>
+          <span>View on Instagram</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="gallery-cta">
+      <a href="https://instagram.com/mearns.detailers" target="_blank" rel="noopener noreferrer" class="btn">
+        <i class="fab fa-instagram"></i> Follow Us on Instagram
+      </a>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta">
+    <h2>Ready to Transform Your Car?</h2>
+    <p class="subtext">
+      Choose the detailing package that suits your car.
+    </p>
+
+    <a href="getquote.html" class="btn">Get Your Detail Now</a>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>Get in touch with our team</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <div class="contact-details">
+          <p><i class="fas fa-phone"></i> <a href="tel:07578007154">+44 7578 007154</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:mearnsdetailers@gmail.com">mearnsdetailers@gmail.com</a>
+          </p>
+          <p><i class="fas fa-map-marker-alt"></i> Glasgow, Scotland</p>
+          <p><i class="fas fa-clock"></i> 10am - 8pm, 7 Days a Week</p>
+        </div>
+        <h3>Let's Connect</h3>
+        <div class="social-links">
+          <a href="https://instagram.com/mearns.detailers" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://tiktok.com/@mearns.detailers" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.facebook.com/share/16mRg4Hfqb/?mibextid=wwXIfr" aria-label="Facebook"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/447578007154" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-ambient" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Mearns Detailers. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const slideMenu = document.getElementById('slideMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    // Toggle menu
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      slideMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+    });
+
+    // Close menu when clicking overlay
+    menuOverlay.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      slideMenu.classList.remove('active');
+      menuOverlay.classList.remove('active');
+    });
+
+    // Close menu when clicking a link
+    const menuLinks = slideMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        slideMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+      });
+    });
+
+    // Prevent body scroll when menu is open
+    const observer = new MutationObserver(() => {
+      if (slideMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+
+    observer.observe(slideMenu, { attributes: true, attributeFilter: ['class'] });
+
+    const track = document.getElementById('reviewTrack');
+    const slides = track.querySelectorAll('.review-slide');
+    const dotsContainer = document.getElementById('reviewDots');
+    let current = 0;
+    let timer;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(index) {
+      current = index;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+      resetTimer();
+    }
+
+    function next() {
+      goTo((current + 1) % slides.length);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(next, 5000);
+    }
+
+    resetTimer();
+
+    const carousel = document.querySelector('.review-carousel');
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchEndX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchmove', e => {
+      touchEndX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', () => {
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          goTo((current + 1) % slides.length);
+        } else {
+          goTo((current - 1 + slides.length) % slides.length);
+        }
+      }
+      touchStartX = 0;
+      touchEndX = 0;
+    });
+  </script>
+
+  <a href="https://wa.me/447578007154?" target="_blank" aria-label="Chat on WhatsApp"
+    style="position:fixed; bottom:20px; right:20px; width:52px; height:52px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,0,0,0.4); z-index:9999; transition:transform 0.2s ease;"
+    onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <i class="fab fa-whatsapp" style="color:#fff; font-size:28px;"></i>
+  </a>
+
+</body>
+
+</html>

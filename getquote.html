@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step 1 | Service</title>
+  <meta name="description"
+    content="Professional mobile car detailing in Glasgow. Interior, exterior and ceramic coating services. Book your detail today.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1149798967099825');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1149798967099825&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #000;
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    header img {
+      height: 56px;
+    }
+
+    /* Progress Bar */
+    .progress {
+      width: 100%;
+      height: 4px;
+      background: #1f1f1f;
+    }
+
+    .bar {
+      width: 25%;
+      height: 100%;
+      background: #38b6ff;
+      transition: width 0.3s ease;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 70px 20px 80px;
+      text-align: center;
+      flex: 1;
+    }
+
+    h2 {
+      font-size: 44px;
+      margin-bottom: 10px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #888;
+      margin-bottom: 40px;
+    }
+
+    /* Select wrapper */
+    .select-wrapper {
+      position: relative;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .select-wrapper::after {
+      content: '';
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 7px solid #38b6ff;
+      pointer-events: none;
+    }
+
+    select {
+      width: 100%;
+      padding: 18px 50px 18px 20px;
+      font-size: 17px;
+      border-radius: 10px;
+      border: 2px solid #1f1f1f;
+      background: #111;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      appearance: none;
+    }
+
+    select:focus {
+      border-color: #38b6ff;
+      box-shadow: 0 0 0 4px rgba(56, 182, 255, 0.15);
+    }
+
+    select option {
+      background: #111;
+      color: #fff;
+    }
+
+    select option[value=""] {
+      color: #888;
+    }
+
+    .hint {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #666;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    button {
+      margin-top: 15px;
+      background: #38b6ff;
+      color: #000;
+      border: none;
+      padding: 16px 44px;
+      font-size: 17px;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .step-label {
+      margin-top: 36px;
+      font-size: 13px;
+      color: #555;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 30px;
+      }
+
+      select {
+        font-size: 16px;
+        padding: 16px 44px 16px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="logo.png" alt="Mearns Detailers Logo">
+  </header>
+
+  <div class="progress">
+    <div class="bar"></div>
+  </div>
+
+  <div class="container">
+    <h2>What service do you need?</h2>
+    <p class="subtitle">Choose the service that best fits your needs.</p>
+
+    <div class="select-wrapper">
+      <select id="service">
+        <option value="">Select a service</option>
+        <option>Exterior Detail</option>
+        <option>Interior Detail</option>
+        <option>Mini Valet</option>
+        <option>Full Detail</option>
+        <option>Machine Polish</option>
+        <option>Ceramic Coating</option>
+        <option>Engine Bay Detail</option>
+        <option>Maintenance Detail</option>
+      </select>
+    </div>
+
+    <div class="hint" style="margin-top: 32px; margin-bottom: 12px; font-size: 15px; color: #cfcfcf; font-weight: 600;">
+      Want to add anything extra? <span style="color:#555; font-weight:400;">(optional)</span>
+    </div>
+
+    <div class="select-wrapper">
+      <select id="addon">
+        <option value="">No add on needed</option>
+        <option>Engine Bay Detail</option>
+        <option>Pet Hair Removal</option>
+        <option>Fabric & Seat Cleaning</option>
+        <option>Trim Restoration</option>
+        <option>Headlight Restoration</option>
+        <option>Odour Elimination</option>
+        <option>Clay Bar Treatment</option>
+        <option>Convertible Roof Cleaning</option>
+        <option>Scratch Removal</option>
+
+
+      </select>
+    </div>
+
+    <div class="hint">Not sure which service you need? <a href="index.html#services" style="color:#38b6ff;">View all
+        services</a></div>
+
+
+    <!-- WhatsApp CTA -->
+    <div style="margin-top: 40px; margin-bottom: 8px;">
+      <a href="https://wa.me/447578007154?text=Hi%2C%20I%27d%20like%20to%20book%20a%20detail%0A%0AMy%20car%20is%3A%20%0AI%27m%20based%20in%3A%20"
+        target="_blank"
+        style="display:inline-flex; align-items:center; gap:10px; background:#25D366; color:#000; text-decoration:none; padding:16px 32px; font-size:17px; font-weight:700; border-radius:10px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#000" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        Book via WhatsApp — faster
+      </a>
+      <p style="color:#555; font-size:13px; margin-top:5px;">Skip the form. Get a reply in minutes.</p>
+    </div>
+
+    <button onclick="next()">Continue</button>
+
+    <p class="step-label">Step 1 of your booking</p>
+  </div>
+
+  <script>
+    function next() {
+      const v = document.getElementById('service').value;
+      if (!v) return alert('Please select a service');
+      const addon = document.getElementById('addon').value;
+      const full = addon ? v + ' + ' + addon : v;
+      localStorage.setItem('service', full);
+      window.location.href = 'vehicle.html';
+    }
+  </script>
+
+</body>
+
+</html>

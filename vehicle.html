@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step 2 | Vehicle</title>
+  <meta name="description"
+    content="Professional mobile car detailing in Glasgow. Interior, exterior and ceramic coating services. Book your detail today.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1149798967099825');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1149798967099825&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #000;
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    header img {
+      height: 56px;
+    }
+
+    /* Progress Bar */
+    .progress {
+      width: 100%;
+      height: 4px;
+      background: #1f1f1f;
+    }
+
+    .bar {
+      width: 50%;
+      height: 100%;
+      background: #38b6ff;
+      transition: width 0.3s ease;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 70px 20px 80px;
+      text-align: center;
+      flex: 1;
+    }
+
+    h2 {
+      font-size: 44px;
+      margin-bottom: 10px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #888;
+      margin-bottom: 40px;
+    }
+
+    .input-box {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    input {
+      width: 100%;
+      padding: 18px 20px;
+      font-size: 17px;
+      border-radius: 10px;
+      border: 2px solid #1f1f1f;
+      background: #111;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input::placeholder {
+      color: #555;
+    }
+
+    input:focus {
+      border-color: #38b6ff;
+      box-shadow: 0 0 0 4px rgba(56, 182, 255, 0.15);
+    }
+
+    .hint {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    button {
+      margin-top: 40px;
+      background: #38b6ff;
+      color: #000;
+      border: none;
+      padding: 16px 44px;
+      font-size: 17px;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .step-label {
+      margin-top: 36px;
+      font-size: 13px;
+      color: #555;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 30px;
+      }
+
+      input {
+        font-size: 16px;
+        padding: 16px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="logo.png" alt="Mearns Detailers Logo">
+  </header>
+
+  <div class="progress">
+    <div class="bar"></div>
+  </div>
+
+  <div class="container">
+    <h2>What car do you have?</h2>
+    <p class="subtitle">This helps us size the vehicle correctly for pricing.</p>
+
+    <div class="input-box">
+      <input type="text" id="vehicle" placeholder="e.g. Volkswagen Golf, BMW 3 Series">
+      <div class="hint">Enter the make and model of your vehicle.</div>
+    </div>
+
+    <button onclick="next()">Continue</button>
+
+    <p class="step-label">Step 2 of your booking</p>
+  </div>
+
+  <script>
+    function next() {
+      const v = document.getElementById('vehicle').value;
+      if (!v) return alert('Please enter your vehicle');
+      localStorage.setItem('vehicle', v);
+      window.location.href = 'details.html';
+    }
+  </script>
+
+</body>
+
+</html>

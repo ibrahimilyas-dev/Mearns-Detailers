@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Mearns Detailers</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="description"
+        content="Car detailing tips, guides and advice from the pros at Mearns Detailers, Glasgow.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #0b0b0b;
+            color: white;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ── Header ── */
+        header {
+            background: #000;
+            padding: 36px 40px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo-wrapper {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        header img {
+            height: 69px;
+        }
+
+        /* ── Hamburger ── */
+        .hamburger {
+            width: 30px;
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 1002;
+            position: relative;
+            margin-left: auto;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background: #38b6ff;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* ── Menu Overlay ── */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ── Slide Menu ── */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            right: -50%;
+            width: 50%;
+            height: 100vh;
+            background: #0f0f0f;
+            border-left: 1px solid #1f1f1f;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+            transition: right 0.3s ease;
+            z-index: 1001;
+            overflow-y: auto;
+        }
+
+        .slide-menu.active {
+            right: 0;
+        }
+
+        .menu-content {
+            padding: 100px 40px 40px;
+        }
+
+        .menu-content nav ul {
+            list-style: none;
+        }
+
+        .menu-content nav ul li {
+            margin-bottom: 30px;
+        }
+
+        .menu-content nav ul li a {
+            color: #cfcfcf;
+            font-size: 24px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+
+        .menu-content nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #38b6ff;
+            transition: width 0.3s ease;
+        }
+
+        .menu-content nav ul li a:hover {
+            color: #38b6ff;
+            transform: translateX(10px);
+        }
+
+        .menu-content nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .menu-divider {
+            height: 1px;
+            background: #1f1f1f;
+            margin: 40px 0;
+        }
+
+        .menu-cta .btn {
+            width: 100%;
+            text-align: center;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #38b6ff;
+            color: #000;
+            padding: 16px 34px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* ── Blog Hero Banner ── */
+        .blog-hero {
+            background: radial-gradient(ellipse at top, #1a1a1a, #0b0b0b);
+            padding: 70px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-hero::before {
+            content: "BLOG";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 220px;
+            font-weight: 900;
+            color: rgba(56, 182, 255, 0.04);
+            letter-spacing: -10px;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .blog-hero-tag {
+            display: inline-block;
+            background: rgba(56, 182, 255, 0.12);
+            border: 1px solid rgba(56, 182, 255, 0.3);
+            color: #38b6ff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .blog-hero h1 {
+            font-size: 52px;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .blog-hero h1 span {
+            color: #38b6ff;
+        }
+
+        .blog-hero p {
+            color: #9a9a9a;
+            font-size: 17px;
+            max-width: 560px;
+            margin: 0 auto 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Search Bar ── */
+        .search-wrapper {
+            position: relative;
+            max-width: 560px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .search-wrapper i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #38b6ff;
+            font-size: 16px;
+            pointer-events: none;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 18px 20px 18px 52px;
+            background: #111;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #searchInput::placeholder {
+            color: #555;
+        }
+
+        #searchInput:focus {
+            border-color: #38b6ff;
+            box-shadow: 0 0 0 3px rgba(56, 182, 255, 0.12);
+        }
+
+        .search-clear {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #555;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 4px;
+            display: none;
+            transition: color 0.2s;
+        }
+
+        .search-clear:hover {
+            color: #38b6ff;
+        }
+
+        .search-clear.visible {
+            display: block;
+        }
+
+        /* ── Blog Section ── */
+        .blog-section {
+            padding: 60px 20px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .blog-section-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .blog-count {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* ── Grid ── */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 28px;
+        }
+
+        /* ── Blog Card ── */
+        .blog-card {
+            background: #111;
+            border: 1px solid #1f1f1f;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            border-color: #38b6ff;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(56, 182, 255, 0.15);
+        }
+
+        .blog-card-thumb {
+            position: relative;
+            height: 200px;
+            background: #161616;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        /* Placeholder gradient thumbnails — distinct per category */
+        .blog-card-thumb.cat-wash {
+            background: linear-gradient(135deg, #0d2233 0%, #0a3d62 50%, #0b0b0b 100%);
+        }
+
+        .blog-card-thumb.cat-polish {
+            background: linear-gradient(135deg, #1a0a2e 0%, #3c1874 50%, #0b0b0b 100%);
+        }
+
+        .blog-card-thumb.cat-coat {
+            background: linear-gradient(135deg, #002922 0%, #005b4f 50%, #0b0b0b 100%);
+        }
+
+        .blog-card-thumb.cat-int {
+            background: linear-gradient(135deg, #221205 0%, #7a3b00 50%, #0b0b0b 100%);
+        }
+
+        .blog-card-thumb.cat-tips {
+            background: linear-gradient(135deg, #0b1a22 0%, #103958 50%, #0b0b0b 100%);
+        }
+
+        .blog-card-thumb-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            opacity: 0.18;
+        }
+
+        .blog-card-thumb-label {
+            position: absolute;
+            bottom: 12px;
+            left: 14px;
+            background: rgba(56, 182, 255, 0.15);
+            border: 1px solid rgba(56, 182, 255, 0.3);
+            color: #38b6ff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 50px;
+        }
+
+        .blog-card-read-time {
+            position: absolute;
+            bottom: 12px;
+            right: 14px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #888;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 50px;
+        }
+
+        .blog-card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .blog-card-date {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .blog-card-title {
+            font-size: 19px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.35;
+            margin-bottom: 12px;
+            transition: color 0.2s;
+        }
+
+        .blog-card:hover .blog-card-title {
+            color: #38b6ff;
+        }
+
+        .blog-card-excerpt {
+            font-size: 14px;
+            color: #7a7a7a;
+            line-height: 1.65;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .blog-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #1c1c1c;
+            padding-top: 16px;
+        }
+
+        .blog-card-author {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .blog-card-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #38b6ff, #0057ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: #000;
+            flex-shrink: 0;
+        }
+
+        .blog-card-author-name {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .blog-card-arrow {
+            color: #38b6ff;
+            font-size: 14px;
+            transition: transform 0.2s;
+        }
+
+        .blog-card:hover .blog-card-arrow {
+            transform: translateX(4px);
+        }
+
+        /* ── No Results ── */
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 80px 20px;
+            color: #444;
+            grid-column: 1 / -1;
+        }
+
+        .no-results i {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+            color: #2a2a2a;
+        }
+
+        .no-results p {
+            font-size: 18px;
+        }
+
+        .no-results span {
+            font-size: 14px;
+            color: #333;
+            display: block;
+            margin-top: 8px;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-ambient {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 200px;
+            background: radial-gradient(ellipse at top, rgba(56, 182, 255, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            color: #38b6ff;
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: #b5b5b5;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #38b6ff;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid #1f1f1f;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            .blog-hero h1 {
+                font-size: 36px;
+            }
+
+            .blog-hero::before {
+                font-size: 110px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .slide-menu {
+                width: 80%;
+                right: -80%;
+            }
+
+            .menu-content {
+                padding: 80px 30px 30px;
+            }
+
+            .menu-content nav ul li a {
+                font-size: 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide-menu {
+                width: 85%;
+                right: -85%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-wrapper">
+            <a href="index.html"><img src="logo.png" alt="Mearns Detailers Logo"></a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Slide-out Menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-content">
+            <nav>
+                <ul>
+                    <!-- TO -->
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="blogs.menu.html">Blog</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#gallery">Our Work</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-divider"></div>
+            <div class="menu-cta">
+                <a href="getquote.html" class="btn">Get Your Detail Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Hero -->
+    <div class="blog-hero">
+        <div class="blog-hero-tag">Detailing Knowledge</div>
+        <h1>The <span>Mearns</span> Blog</h1>
+        <p>Expert tips, how-tos, and detailing guides straight from our team in Glasgow.</p>
+
+        <!-- Search -->
+        <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search articles… e.g. ceramic coating, interior cleaning"
+                autocomplete="off">
+            <button class="search-clear" id="searchClear" aria-label="Clear search">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blog-section">
+        <div class="blog-section-header">
+            <h2>All Articles</h2>
+            <span class="blog-count" id="blogCount">10 articles</span>
+        </div>
+
+        <div class="blog-grid" id="blogGrid">
+
+            <!-- 1 -->
+            <a href="blogs/blog1.html" style="text-decoration:none; display:flex;">
+                <article class="blog-card" data-title="How Often Should You Detail Your Car?" data-category="tips"
+                    data-excerpt="Many car owners wonder how frequently they should book a professional detail. We break down the ideal schedule based on how you use your vehicle.">
+                    <div class="blog-card-thumb cat-tips">
+                        <div class="blog-card-thumb-icon">🗓️</div>
+                        <span class="blog-card-thumb-label">Car Care Tips</span>
+                        <span class="blog-card-read-time">5 min read</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Coming Soon</div>
+                        <h3 class="blog-card-title">How Often Should You Detail Your Car?</h3>
+                        <p class="blog-card-excerpt">Many car owners wonder how frequently they should book a
+                            professional
+                            detail. We break down the ideal schedule based on how you use your vehicle, the Scottish
+                            weather, and your budget.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-author">
+                                <div class="blog-card-avatar">MD</div>
+                                <span class="blog-card-author-name">Mearns Detailers</span>
+                            </div>
+                            <span class="blog-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <!-- 2 -->
+            <a href="blogs/blog2.html" style="text-decoration:none; display:flex;">
+                <article class="blog-card" data-title="Ceramic Coating vs Wax: What's the Difference?"
+                    data-category="ceramic coating"
+                    data-excerpt="Both protect your paintwork — but they're worlds apart in terms of durability and performance. Here's everything you need to know.">
+                    <div class="blog-card-thumb cat-coat">
+                        <div class="blog-card-thumb-icon">🛡️</div>
+                        <span class="blog-card-thumb-label">Ceramic Coating</span>
+                        <span class="blog-card-read-time">7 min read</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Coming Soon</div>
+                        <h3 class="blog-card-title">Ceramic Coating vs Wax: What's the Difference?</h3>
+                        <p class="blog-card-excerpt">Both protect your paintwork — but they're worlds apart in terms of
+                            durability and performance. Here's everything you need to know before making a decision.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-author">
+                                <div class="blog-card-avatar">MD</div>
+                                <span class="blog-card-author-name">Mearns Detailers</span>
+                            </div>
+                            <span class="blog-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <!-- 3 -->
+            <a href="blogs/blog3.html" style="text-decoration:none; display:flex;">
+                <article class="blog-card" data-title="The Ultimate Guide to Interior Deep Cleaning"
+                    data-category="interior"
+                    data-excerpt="From steam cleaning leather to shampooing carpets, discover the step-by-step process our team use to restore any interior to showroom condition.">
+                    <div class="blog-card-thumb cat-int">
+                        <div class="blog-card-thumb-icon">🪑</div>
+                        <span class="blog-card-thumb-label">Interior</span>
+                        <span class="blog-card-read-time">8 min read</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Coming Soon</div>
+                        <h3 class="blog-card-title">The Ultimate Guide to Interior Deep Cleaning</h3>
+                        <p class="blog-card-excerpt">From steam cleaning leather to shampooing carpets, discover the
+                            step-by-step process our team use to restore any interior to showroom condition.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-author">
+                                <div class="blog-card-avatar">MD</div>
+                                <span class="blog-card-author-name">Mearns Detailers</span>
+                            </div>
+                            <span class="blog-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <!-- 4 -->
+            <a href="blogs/blog4.html" style="text-decoration:none; display:flex;">
+                <article class="blog-card" data-title="What is Paint Correction and Does Your Car Need It?"
+                    data-category="machine polishing"
+                    data-excerpt="Swirl marks, scratches and oxidation can make even an expensive car look tired. We explain what paint correction is and when it's worth it.">
+                    <div class="blog-card-thumb cat-polish">
+                        <div class="blog-card-thumb-icon">✨</div>
+                        <span class="blog-card-thumb-label">Machine Polishing</span>
+                        <span class="blog-card-read-time">6 min read</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Coming Soon</div>
+                        <h3 class="blog-card-title">What is Paint Correction and Does Your Car Need It?</h3>
+                        <p class="blog-card-excerpt">Swirl marks, scratches and oxidation can make even an expensive car
+                            look tired. We explain what paint correction is, how it works, and when it's genuinely worth
+                            the
+                            investment.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-author">
+                                <div class="blog-card-avatar">MD</div>
+                                <span class="blog-card-author-name">Mearns Detailers</span>
+                            </div>
+                            <span class="blog-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <!-- 5 -->
+            <a href="blogs/blog5.html" style="text-decoration:none; display:flex;">
+                <article class="blog-card" data-title="The Two Bucket Wash Method Explained"
+                    data-category="exterior wash"
+                    data-excerpt="One of the most common ways car paint gets damaged is an improper wash technique. Learn why the two bucket method is the gold standard.">
+                    <div class="blog-card-thumb cat-wash">
+                        <div class="blog-card-thumb-icon">🪣</div>
+                        <span class="blog-card-thumb-label">Exterior Wash</span>
+                        <span class="blog-card-read-time">4 min read</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Coming Soon</div>
+                        <h3 class="blog-card-title">The Two Bucket Wash Method Explained</h3>
+                        <p class="blog-card-excerpt">One of the most common ways car paint gets damaged is an improper
+                            wash
+                            technique. Learn why the two bucket method is the gold standard and how to do it properly.
+                        </p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-author">
+                                <div class="blog-card-avatar">MD</div>
+                                <span class="blog-card-author-name">Mearns Detailers</span>
+                            </div>
+                            <span class="blog-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <!-- 6 -->
+            <a href="blogs/blog6.html" style="text-decoration:none; display:flex;">
+                <article class="blog-card" data-title="How to Remove Pet Hair from Your Car Interior"
+                    data-category="interior"
+                    data-excerpt="Dog hair in your seats and carpets is one of the most stubborn problems in car detailing. Here are the professional methods that actually work.">
+                    <div class="blog-card-thumb cat-int">
+                        <div class="blog-card-thumb-icon">🐾</div>
+                        <span class="blog-card-thumb-label">Interior</span>
+                        <span class="blog-card-read-time">5 min read</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Coming Soon</div>
+                        <h3 class="blog-card-title">How to Remove Pet Hair from Your Car Interior</h3>
+                        <p class="blog-card-excerpt">Dog hair in your seats and carpets is one of the most stubborn
+                            problems
+                            in car detailing. Here are the professional methods that actually work — no lint rollers
+                            needed.
+                        </p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-author">
+                                <div class="blog-card-avatar">MD</div>
+                                <span class="blog-card-author-name">Mearns Detailers</span>
+                            </div>
+                            <span class="blog-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <!-- 7 -->
+            <a href="blogs/blog7.html" style="text-decoration:none; display:flex;">
+                <article class="blog-card" data-title="Is a Ceramic Coating Worth the Money?"
+                    data-category="ceramic coating"
+                    data-excerpt="With prices starting from £450, ceramic coatings aren't cheap. But for the right car and the right owner, the long-term benefits far outweigh the cost.">
+                    <div class="blog-card-thumb cat-coat">
+                        <div class="blog-card-thumb-icon">💎</div>
+                        <span class="blog-card-thumb-label">Ceramic Coating</span>
+                        <span class="blog-card-read-time">6 min read</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Coming Soon</div>
+                        <h3 class="blog-card-title">Is a Ceramic Coating Worth the Money?</h3>
+                        <p class="blog-card-excerpt">With prices starting from £450, ceramic coatings aren't cheap. But
+                            for
+                            the right car and the right owner, the long-term benefits far outweigh the cost. We break it
+                            all
+                            down honestly.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-author">
+                                <div class="blog-card-avatar">MD</div>
+                                <span class="blog-card-author-name">Mearns Detailers</span>
+                            </div>
+                            <span class="blog-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <!-- 8 -->
+            <a href="blogs/blog8.html" style="text-decoration:none; display:flex;">
+                <article class="blog-card" data-title="Why Glasgow's Weather is Tough on Car Paint" data-category="tips"
+                    data-excerpt="Rain, road salt, bird droppings — the Scottish climate is brutal on your paintwork. Here's how to protect your car year-round in Glasgow.">
+                    <div class="blog-card-thumb cat-tips">
+                        <div class="blog-card-thumb-icon">🌧️</div>
+                        <span class="blog-card-thumb-label">Car Care Tips</span>
+                        <span class="blog-card-read-time">5 min read</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Coming Soon</div>
+                        <h3 class="blog-card-title">Why Glasgow's Weather is Tough on Car Paint</h3>
+                        <p class="blog-card-excerpt">Rain, road salt, bird droppings — the Scottish climate is brutal on
+                            your paintwork. Here's how to protect your car year-round and what signs of damage to watch
+                            out
+                            for.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-author">
+                                <div class="blog-card-avatar">MD</div>
+                                <span class="blog-card-author-name">Mearns Detailers</span>
+                            </div>
+                            <span class="blog-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <!-- 9 -->
+            <a href="blogs/blog9.html" style="text-decoration:none; display:flex;">
+                <article class="blog-card" data-title="5 Signs Your Car Needs a Full Detail" data-category="tips"
+                    data-excerpt="Not sure if your car is due a detail? Here are five telltale signs that it's time to book in — and why leaving it longer makes it worse.">
+                    <div class="blog-card-thumb cat-tips">
+                        <div class="blog-card-thumb-icon">🔍</div>
+                        <span class="blog-card-thumb-label">Car Care Tips</span>
+                        <span class="blog-card-read-time">4 min read</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Coming Soon</div>
+                        <h3 class="blog-card-title">5 Signs Your Car Needs a Full Detail</h3>
+                        <p class="blog-card-excerpt">Not sure if your car is due a detail? Here are five telltale signs
+                            that
+                            it's time to book in — and why leaving it longer often makes the job harder and more
+                            expensive.
+                        </p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-author">
+                                <div class="blog-card-avatar">MD</div>
+                                <span class="blog-card-author-name">Mearns Detailers</span>
+                            </div>
+                            <span class="blog-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <!-- 10 -->
+            <a href="blogs/blog10.html" style="text-decoration:none; display:flex;">
+                <article class="blog-card" data-title="Exterior vs Full Detail: Which Should You Book?"
+                    data-category="exterior"
+                    data-excerpt="Can't decide between an exterior-only detail and a full detail? We compare both packages so you can choose what's right for your car and budget.">
+                    <div class="blog-card-thumb cat-wash">
+                        <div class="blog-card-thumb-icon">🚗</div>
+                        <span class="blog-card-thumb-label">Exterior</span>
+                        <span class="blog-card-read-time">5 min read</span>
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-card-date">Coming Soon</div>
+                        <h3 class="blog-card-title">Exterior vs Full Detail: Which Should You Book?</h3>
+                        <p class="blog-card-excerpt">Can't decide between an exterior-only detail and a full detail? We
+                            compare both packages so you can choose what's right for your car, your situation, and your
+                            budget.</p>
+                        <div class="blog-card-footer">
+                            <div class="blog-card-author">
+                                <div class="blog-card-avatar">MD</div>
+                                <span class="blog-card-author-name">Mearns Detailers</span>
+                            </div>
+                            <span class="blog-card-arrow"><i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+
+            <!-- No results -->
+            <div class="no-results" id="noResults">
+                <i class="fas fa-search"></i>
+                <p>No articles found</p>
+                <span>Try a different search term</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-ambient" aria-hidden="true"></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="blogs.html">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="exterior.html">Exterior Detail</a></li>
+                        <li><a href="interior.html">Interior Detail</a></li>
+                        <li><a href="fulldetail.html">Full Detail</a></li>
+                        <li><a href="machine.html">Machine Polishing</a></li>
+                        <li><a href="ceramic.html">Ceramic Coating</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="tel:07578007154">07578 007154</a></li>
+                        <li><a href="mailto:mearnsdetailers@gmail.com">mearnsdetailers@gmail.com</a></li>
+                        <li>Glasgow, Scotland</li>
+                        <li>10am – 8pm, 7 Days a Week</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mearns Detailers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Hamburger ──
+        const hamburger = document.getElementById('hamburger');
+        const slideMenu = document.getElementById('slideMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            slideMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+        });
+
+        menuOverlay.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            slideMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+        });
+
+        slideMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                slideMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+        });
+
+        const obs = new MutationObserver(() => {
+            document.body.style.overflow = slideMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        obs.observe(slideMenu, { attributes: true, attributeFilter: ['class'] });
+
+        // ── Search ──
+        const searchInput = document.getElementById('searchInput');
+        const searchClear = document.getElementById('searchClear');
+        const blogGrid = document.getElementById('blogGrid');
+        const blogCount = document.getElementById('blogCount');
+        const noResults = document.getElementById('noResults');
+        const cards = blogGrid.querySelectorAll('.blog-card');
+
+        function filterCards(query) {
+            const q = query.trim().toLowerCase();
+            let visible = 0;
+
+            cards.forEach(card => {
+                const title = card.dataset.title.toLowerCase();
+                const category = card.dataset.category.toLowerCase();
+                const excerpt = card.dataset.excerpt.toLowerCase();
+                const match = !q || title.includes(q) || category.includes(q) || excerpt.includes(q);
+
+                card.style.display = match ? '' : 'none';
+                if (match) visible++;
+            });
+
+            blogCount.textContent = visible + (visible === 1 ? ' article' : ' articles');
+            noResults.style.display = visible === 0 ? 'block' : 'none';
+        }
+
+        searchInput.addEventListener('input', () => {
+            const q = searchInput.value;
+            searchClear.classList.toggle('visible', q.length > 0);
+            filterCards(q);
+        });
+
+        searchClear.addEventListener('click', () => {
+            searchInput.value = '';
+            searchClear.classList.remove('visible');
+            filterCards('');
+            searchInput.focus();
+        });
+    </script>
+
+</body>
+
+</html>

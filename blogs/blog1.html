@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How Often Should You Detail Your Car? | Mearns Detailers</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="description"
+        content="How frequently should you book a professional car detail? We break down the ideal schedule based on how you use your vehicle and the Scottish weather.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #0b0b0b;
+            color: white;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Header */
+        header {
+            background: #000;
+            padding: 36px 40px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo-wrapper {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        header img {
+            height: 69px;
+        }
+
+        .hamburger {
+            width: 30px;
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 1002;
+            position: relative;
+            margin-left: auto;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background: #38b6ff;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            right: -50%;
+            width: 50%;
+            height: 100vh;
+            background: #0f0f0f;
+            border-left: 1px solid #1f1f1f;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+            transition: right 0.3s ease;
+            z-index: 1001;
+            overflow-y: auto;
+        }
+
+        .slide-menu.active {
+            right: 0;
+        }
+
+        .menu-content {
+            padding: 100px 40px 40px;
+        }
+
+        .menu-content nav ul {
+            list-style: none;
+        }
+
+        .menu-content nav ul li {
+            margin-bottom: 30px;
+        }
+
+        .menu-content nav ul li a {
+            color: #cfcfcf;
+            font-size: 24px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+
+        .menu-content nav ul li a:hover {
+            color: #38b6ff;
+            transform: translateX(10px);
+        }
+
+        .menu-divider {
+            height: 1px;
+            background: #1f1f1f;
+            margin: 40px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #38b6ff;
+            color: #000;
+            padding: 16px 34px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .menu-cta .btn {
+            width: 100%;
+            text-align: center;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        /* Blog Hero */
+        .blog-post-hero {
+            background: radial-gradient(ellipse at top, #0b1a22 0%, #0b0b0b 70%);
+            padding: 70px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .blog-post-hero::before {
+            content: "TIPS";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 200px;
+            font-weight: 900;
+            color: rgba(56, 182, 255, 0.03);
+            letter-spacing: -10px;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 30px;
+            transition: color 0.2s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link:hover {
+            color: #38b6ff;
+        }
+
+        .post-category-tag {
+            display: inline-block;
+            background: rgba(56, 182, 255, 0.12);
+            border: 1px solid rgba(56, 182, 255, 0.3);
+            color: #38b6ff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .post-hero-title {
+            font-size: 46px;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .post-hero-title span {
+            color: #38b6ff;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            color: #555;
+            font-size: 13px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .post-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .post-meta-item i {
+            color: #38b6ff;
+            font-size: 12px;
+        }
+
+        /* Article */
+        .article-wrapper {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 70px 20px 100px;
+        }
+
+        .article-lead {
+            font-size: 20px;
+            color: #c0c0c0;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            border-left: 3px solid #38b6ff;
+            padding-left: 24px;
+        }
+
+        .article-body h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #fff;
+            margin: 48px 0 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .article-body h3 {
+            font-size: 19px;
+            font-weight: 700;
+            color: #38b6ff;
+            margin: 32px 0 12px;
+        }
+
+        .article-body p {
+            font-size: 16px;
+            color: #9a9a9a;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .article-body ul,
+        .article-body ol {
+            margin: 0 0 24px 24px;
+        }
+
+        .article-body li {
+            font-size: 16px;
+            color: #9a9a9a;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .article-body strong {
+            color: #d0d0d0;
+            font-weight: 600;
+        }
+
+        .article-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #2a2a2a, transparent);
+            margin: 48px 0;
+        }
+
+        /* Callout box */
+        .callout {
+            background: #111;
+            border: 1px solid #1f1f1f;
+            border-left: 4px solid #38b6ff;
+            border-radius: 0 12px 12px 0;
+            padding: 24px 28px;
+            margin: 32px 0;
+        }
+
+        .callout p {
+            color: #b0b0b0;
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .callout strong {
+            color: #38b6ff;
+        }
+
+        /* Summary table */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .summary-table th {
+            background: #111;
+            color: #38b6ff;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid #1f1f1f;
+        }
+
+        .summary-table td {
+            padding: 14px 18px;
+            font-size: 14px;
+            color: #8a8a8a;
+            border-bottom: 1px solid #161616;
+        }
+
+        .summary-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .summary-table tr:nth-child(even) td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* CTA */
+        .article-cta {
+            background: linear-gradient(135deg, #0a1e2e, #0b0b0b);
+            border: 1px solid #1f1f1f;
+            border-radius: 16px;
+            padding: 48px 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .article-cta h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .article-cta h3 span {
+            color: #38b6ff;
+        }
+
+        .article-cta p {
+            color: #666;
+            margin-bottom: 28px;
+            font-size: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-ambient {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 200px;
+            background: radial-gradient(ellipse at top, rgba(56, 182, 255, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            color: #38b6ff;
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: #b5b5b5;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #38b6ff;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid #1f1f1f;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            .post-hero-title {
+                font-size: 30px;
+            }
+
+            .slide-menu {
+                width: 80%;
+                right: -80%;
+            }
+
+            .menu-content {
+                padding: 80px 30px 30px;
+            }
+
+            .article-cta {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-wrapper">
+            <a href="../index.html"><img src="../logo.png" alt="Mearns Detailers Logo"></a>
+        </div>
+        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-content">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about">About Us</a></li>
+                    <li><a href="../blogs.menu.html">Blog</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#gallery">Our Work</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-divider"></div>
+            <div class="menu-cta"><a href="../getquote.html" class="btn">Get Your Detail Now</a></div>
+        </div>
+    </div>
+
+    <div class="blog-post-hero">
+        <a href="../blogs.menu.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+        <div class="post-category-tag">Car Care Tips</div>
+        <h1 class="post-hero-title">How Often Should You <span>Detail Your Car?</span></h1>
+        <div class="post-meta">
+            <span class="post-meta-item"><i class="fas fa-user"></i> Mearns Detailers</span>
+            <span class="post-meta-item"><i class="fas fa-clock"></i> 5 min read</span>
+            <span class="post-meta-item"><i class="fas fa-tag"></i> Car Care Tips</span>
+        </div>
+    </div>
+
+    <div class="article-wrapper">
+        <p class="article-lead">It's one of the most common questions we get from customers: "How often should I
+            actually be getting my car detailed?" The honest answer depends on a few key factors — but we'll walk you
+            through everything.</p>
+
+        <div class="article-body">
+            <h2>Why Detailing Frequency Matters</h2>
+            <p>A professional detail isn't just about making your car look good for a day. Regular detailing protects
+                your paintwork, preserves your interior materials, and can even maintain the resale value of your
+                vehicle over time. The longer you leave it between details, the harder — and more expensive — it becomes
+                to restore the car to its best condition.</p>
+            <p>In Scotland particularly, the combination of rain, road salt, and general grime means your car's surfaces
+                are constantly under attack. That's why staying on top of your car's condition is so important.</p>
+
+            <div class="article-divider"></div>
+
+            <h2>The Factors That Affect How Often You Should Detail</h2>
+
+            <h3>How Much You Drive</h3>
+            <p>The more miles you cover, the faster contaminants build up. If you're doing 15,000+ miles a year, your
+                paintwork will accumulate more road grime, tar, and iron fallout than someone who only drives at
+                weekends. High-mileage drivers should aim for more frequent exterior details.</p>
+
+            <h3>Where You Park</h3>
+            <p>Do you park under trees? You'll deal with sap and bird droppings constantly — both of which are acidic
+                and can etch into your lacquer within days if left untreated. Outdoor parking in general means more
+                exposure to the elements, so your car will need attention more regularly than one kept in a garage.</p>
+
+            <h3>Do You Have Kids or Pets?</h3>
+            <p>Families with young children or dogs should prioritise interior detailing more frequently. Food spills,
+                muddy paws, and pet hair can build up quickly and — if left — become genuinely difficult to remove.
+                Odours can also set into fabric and carpet over time.</p>
+
+            <h3>Does Your Car Have Paint Protection?</h3>
+            <p>If you've had a <strong>ceramic coating</strong> applied, your exterior will be far more resistant to
+                contamination and easier to maintain. A coated car can go longer between full exterior details, though
+                you'll still want to keep on top of regular maintenance washes.</p>
+
+            <div class="article-divider"></div>
+
+            <h2>Our Recommended Detailing Schedule</h2>
+            <p>Here's a general guide to how often you should be booking different types of detail based on your
+                situation:</p>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Detail Type</th>
+                        <th>Recommended Frequency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maintenance wash (exterior)</td>
+                        <td>Every 2–4 weeks</td>
+                    </tr>
+                    <tr>
+                        <td>Full exterior detail</td>
+                        <td>Every 3–6 months</td>
+                    </tr>
+                    <tr>
+                        <td>Interior detail</td>
+                        <td>Every 3–6 months (or as needed)</td>
+                    </tr>
+                    <tr>
+                        <td>Full detail (inside & out)</td>
+                        <td>Every 6–12 months</td>
+                    </tr>
+                    <tr>
+                        <td>Machine polish</td>
+                        <td>Every 12–24 months (or before ceramic coating)</td>
+                    </tr>
+                    <tr>
+                        <td>Ceramic coating top-up</td>
+                        <td>As recommended by your detailer</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout">
+                <p><strong>Glasgow tip:</strong> The autumn and winter months are particularly tough on paintwork in
+                    Scotland. We recommend booking a full detail in October before the worst of the weather hits, and
+                    again in spring to remove the salt and grime that builds up over winter.</p>
+            </div>
+
+            <h2>Signs You're Overdue a Detail</h2>
+            <ul>
+                <li>Water no longer beads on your paintwork — it sheets instead</li>
+                <li>Your paint looks dull, hazy, or has visible swirl marks</li>
+                <li>Your interior has a persistent odour you can't shift</li>
+                <li>There's visible grime, staining, or pet hair embedded in the carpet and seats</li>
+                <li>Your windows are hazy or have a film that doesn't clear with a standard wiper</li>
+            </ul>
+
+            <h2>What Happens If You Leave It Too Long?</h2>
+            <p>Neglected paintwork is far more expensive to restore than maintained paintwork. Bird droppings and tree
+                sap that have been left for weeks can etch permanently into your lacquer. Road salt that builds up over
+                winter can corrode metal components. And an interior that hasn't been deep cleaned in years may require
+                steam cleaning, ozone treatment, and specialist products to bring it back — all of which add to the
+                cost.</p>
+            <p>Regular detailing is genuinely an investment that saves money in the long run, not just a luxury.</p>
+
+            <div class="article-divider"></div>
+
+            <h2>The Bottom Line</h2>
+            <p>For most drivers in Glasgow and the surrounding area, we'd recommend a full detail at least once a year —
+                ideally twice. Combine that with regular maintenance washes and an interior freshen-up every few months,
+                and your car will stay in great condition year-round.</p>
+            <p>Not sure where to start? Get in touch with us and we'll assess your car and recommend the right service
+                for your needs and budget.</p>
+        </div>
+
+        <div class="article-cta">
+            <h3>Ready to Book Your <span>Detail?</span></h3>
+            <p>Get a free, no-obligation quote from our team in Glasgow. We'll recommend exactly what your car needs.
+            </p>
+            <a href="../getquote.html" class="btn">Get a Free Quote</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-ambient" aria-hidden="true"></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#services">Services</a></li>
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../blogs.menu.html">Blog</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="../exterior.html">Exterior Detail</a></li>
+                        <li><a href="../interior.html">Interior Detail</a></li>
+                        <li><a href="../fulldetail.html">Full Detail</a></li>
+                        <li><a href="../machine.html">Machine Polishing</a></li>
+                        <li><a href="../ceramic.html">Ceramic Coating</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="tel:07578007154">07578 007154</a></li>
+                        <li><a href="mailto:mearnsdetailers@gmail.com">mearnsdetailers@gmail.com</a></li>
+                        <li>Glasgow, Scotland</li>
+                        <li>10am – 8pm, 7 Days a Week</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mearns Detailers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const slideMenu = document.getElementById('slideMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); slideMenu.classList.toggle('active'); menuOverlay.classList.toggle('active'); });
+        menuOverlay.addEventListener('click', () => { hamburger.classList.remove('active'); slideMenu.classList.remove('active'); menuOverlay.classList.remove('active'); });
+        slideMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { hamburger.classList.remove('active'); slideMenu.classList.remove('active'); menuOverlay.classList.remove('active'); }));
+    </script>
+</body>
+
+</html>
