@@ -30,7 +30,7 @@ The website provides customers with information about detailing services, pricin
 ## Technologies
 
 - HTML5
-- CSS3
+- CSS
 - JavaScript
 - Git
 - GitHub
