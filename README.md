@@ -6,7 +6,7 @@ This project was built for a real operating business, with a focus on creating a
 
 ## Live Website
 
-[View Live Website] mearnsdetailers.com
+[View Live Website](https://mearnsdetailers.com)
 
 ## Overview
 
